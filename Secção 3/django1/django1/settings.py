@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-r3)qxzu-m1ctv=66+9o@ykornrst(ci$g-=xnpcw$gm+s9$d@1
 #DEBUG false modo produção
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*'] # dominio não definido então vou manter '*'
 
 
 # Application definition
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -127,3 +128,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') #usado durante a produção!
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGOUT_REDIRECT_URL = 'index'
